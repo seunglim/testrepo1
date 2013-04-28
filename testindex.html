@@ -6,24 +6,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="run_prettify.js"></script>
     <script src="lib/underscore.js"></script>
-    <script src="lib/jquery.js"></script>
-    <script src="lib/backbone.js"></script>
-    <!--
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
-    -->
 
-    <script src="src/App.js"></script>
-    <script src="src/AppView.js"></script>
-    <script src="src/RepoView.js"></script>
-    <script src="src/RepoListView.js"></script>
-    <script src="src/RepoItemView.js"></script>
-    <script src="src/RepoEntryView.js"></script>
-    <script src="src/FileView.js"></script>
-    <script src="src/decode64.js"></script>
-    <script src="src/githubdata.js"></script>
-    
   </head>
   <body>
     <div id="header">
@@ -49,15 +32,12 @@
       $(function() {
         myApp = new App();
         myAppView = new AppView({model: myApp});
-        // window.myApp = new App();
-        // window.myAppView = new AppView({model: myApp});
 
         $('body').append(myAppView.render());
 
         $("#submitButton").on('click',function(event) {
           event.preventDefault();
           myApp.set('showUser', $("#userName").val());
-          console.log($("#userName").html());
         });
       });
 
